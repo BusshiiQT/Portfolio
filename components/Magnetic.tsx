@@ -1,24 +1,27 @@
 "use client";
-import { useRef, MouseEvent, ReactNode } from "react";
+import { useRef, type MouseEvent, type ReactNode } from "react";
 
+/**
+ * Magnetic wrapper that subtly pulls toward the cursor.
+ * Simpler typing (always renders a <span/>) to keep TS happy on Vercel.
+ */
 type Props = {
   children: ReactNode;
-  strength?: number; // px offset toward cursor (default 6)
-  as?: keyof JSX.IntrinsicElements; // wrapper element, default 'div'
-  style?: React.CSSProperties;
+  strength?: number;                // default 6px
   className?: string;
+  style?: React.CSSProperties;
+  as?: "span" | "div" | "a" | "button"; // accepted but ignored (for compatibility)
 };
 
 export default function Magnetic({
   children,
   strength = 6,
-  as: As = "div",
-  style,
   className,
+  style,
 }: Props) {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLSpanElement | null>(null);
 
-  const onMouseMove = (e: MouseEvent<HTMLElement>) => {
+  const onMouseMove = (e: MouseEvent<HTMLSpanElement>) => {
     const el = ref.current;
     if (!el) return;
     const r = el.getBoundingClientRect();
@@ -36,14 +39,14 @@ export default function Magnetic({
   };
 
   return (
-    <As
-      ref={ref as any}
+    <span
+      ref={ref}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
       className={className}
       style={style}
     >
       {children}
-    </As>
+    </span>
   );
 }
