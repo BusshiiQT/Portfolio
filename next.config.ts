@@ -2,20 +2,19 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-
-  // Allow external images (update this list if you use other hosts)
   images: {
     remotePatterns: [
+      // Add all the domains you actually use:
       { protocol: "https", hostname: "images.unsplash.com" },
-      // { protocol: "https", hostname: "your.cdn.com" },
+      { protocol: "https", hostname: "picsum.photos" },
+      { protocol: "https", hostname: "i.imgur.com" },
+      // Example for GitHub raw:
+      // { protocol: "https", hostname: "raw.githubusercontent.com" },
+      // Example for your own CDN/domain:
+      // { protocol: "https", hostname: "cdn.yourdomain.com" },
     ],
   },
-
-  // Quiet CI builds: skip ESLint during `next build`
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
+  eslint: { ignoreDuringBuilds: true },
   experimental: {},
 };
 

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/data/projects";
 import { useRef, type MouseEvent } from "react";
 
@@ -28,15 +29,96 @@ export default function ProjectCard({ p }: { p: Project }) {
 
   const liveRef = useRef<HTMLAnchorElement>(null);
   const codeRef = useRef<HTMLAnchorElement>(null);
-  const caseRef = useRef<HTMLAnchorElement>(null); // ✅ typed anchor ref
+  const caseRef = useRef<HTMLAnchorElement>(null);
 
   return (
-    <article className="card" aria-labelledby={`${p.slug}-title`} style={{ display: "flex", flexDirection: "column", gap: 10, position: "relative", opacity: isSoon ? 0.9 : 1 }}>
-      {/* ...image, title, summary, chips... */}
+    <article
+      className="card"
+      aria-labelledby={`${p.slug}-title`}
+      style={{ display: "flex", flexDirection: "column", gap: 10, position: "relative", opacity: isSoon ? 0.9 : 1 }}
+    >
+      {/* IMAGE (next/image) */}
+      <div
+        className="shimmer"
+        style={{
+          width: "100%",
+          aspectRatio: "16 / 9",
+          borderRadius: 12,
+          overflow: "hidden",
+          border: "1px solid var(--border-soft)",
+          position: "relative",
+          background:
+            "linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.03))",
+          filter: isSoon ? "grayscale(0.15)" : "none",
+        }}
+      >
+        {p.image ? (
+          <Image
+            src={p.image}
+            alt={`${p.title} preview`}
+            // Use fill + objectFit for responsive cover
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 33vw"
+            style={{ objectFit: "cover" }}
+            priority={false}
+          />
+        ) : (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "grid",
+              placeItems: "center",
+            }}
+          >
+            <span className="muted">{p.title} preview</span>
+          </div>
+        )}
+      </div>
 
+      {/* Title */}
+      <h3 id={`${p.slug}-title`} className="glow-title" style={{ margin: "10px 0 2px", fontSize: "1.1rem" }}>
+        {p.title}
+      </h3>
+
+      {/* Summary */}
+      <p className="muted" style={{ margin: 0 }}>{p.summary}</p>
+
+      {/* Tech chips */}
+      <div style={{ marginTop: 8, display: "flex", flexWrap: "wrap", gap: 6 }}>
+        {p.tech.slice(0, 4).map((t) => (
+          <span
+            key={t}
+            style={{
+              display: "inline-block",
+              padding: "4px 10px",
+              border: "1px solid var(--border-soft)",
+              borderRadius: 999,
+              fontSize: 12,
+              color: "var(--text-dim)",
+              background: "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00))",
+              backdropFilter: "blur(6px)",
+            }}
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+
+      {/* Actions */}
       <div className="actions" style={{ marginTop: 8 }}>
         {isSoon ? (
-          <span aria-disabled="true" style={{ padding: "8px 12px", borderRadius: 10, border: "1px solid var(--border-soft)", color: "var(--text-dim)", background: "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00))", backdropFilter: "blur(6px)" }}>
+          <span
+            aria-disabled="true"
+            style={{
+              padding: "8px 12px",
+              borderRadius: 10,
+              border: "1px solid var(--border-soft)",
+              color: "var(--text-dim)",
+              background: "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00))",
+              backdropFilter: "blur(6px)",
+            }}
+          >
             Stay tuned
           </span>
         ) : (
@@ -70,7 +152,7 @@ export default function ProjectCard({ p }: { p: Project }) {
               </a>
             )}
             <Link
-              ref={caseRef}  
+              ref={caseRef}
               className="btn"
               href={`/projects/${p.slug}`}
               title="Case study"
