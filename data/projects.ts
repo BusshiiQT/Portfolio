@@ -30,7 +30,7 @@ export const projects: Project[] = [
     ],
     tech: ["Next.js", "TypeScript", "Supabase", "Vercel", "OpenAI API"],
     liveUrl: "https://neighborlink-gules.vercel.app",
-    repoUrl: "https://github.com/BusshiiQT/Neighborlink", // updated
+    repoUrl: "https://github.com/BusshiiQT/Neighborlink",
     image: "/images/neighborlink-1.png",
     images: [
       "/images/neighborlink-1.png",
@@ -53,6 +53,53 @@ export const projects: Project[] = [
       ]
     }
   },
+
+  {
+    title: "PetCare Hub",
+    slug: "petcare-hub",
+    summary:
+      "A full-stack pet care booking platform connecting pet owners with service providers, featuring real-time availability validation and secure booking workflows.",
+    highlights: [
+      "Server-side provider availability validation.",
+      "Conflict-safe booking with overlap prevention.",
+      "Role-based dashboards for owners and providers."
+    ],
+    tech: [
+      "Next.js (App Router)",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Vercel"
+    ],
+    liveUrl: "https://petcare-hub.vercel.app",
+    repoUrl: "https://github.com/BusshiiQT/petcare-hub",
+    image: "/images/petcare-hub1.png",
+    images: [
+      "/images/petcare-hub1.png",
+      "/images/petcare-hub2.png",
+      "/images/petcare-hub3.png",
+      "/images/petcare-hub4.png",
+      "/images/petcare-hub5.png",
+      "/images/petcare-hub6.png",
+      "/images/petcare-hub7.png",
+    ],
+    caseStudy: {
+      overview:
+        "PetCare Hub is a production-ready scheduling platform designed to safely match pet owners with service providers while preventing double bookings and invalid time selections.",
+      problem:
+        "Many booking platforms rely on client-side validation, leading to race conditions and double-bookings.",
+      solution: [
+        "Implemented server-side availability checks against provider schedules.",
+        "Added overlap detection for pending and confirmed bookings.",
+        "Used Supabase Postgres with enforced constraints for data integrity."
+      ],
+      impact: [
+        "Eliminated booking conflicts at the database level.",
+        "Improved reliability and trust for both pet owners and providers."
+      ]
+    }
+  },
+
   {
     title: "Personal CRM",
     slug: "personal-crm",
@@ -71,7 +118,7 @@ export const projects: Project[] = [
       "Vercel"
     ],
     liveUrl: "https://personal-crm-phi.vercel.app",
-    repoUrl: "https://github.com/BusshiiQT/Personal-CRM", // updated
+    repoUrl: "https://github.com/BusshiiQT/Personal-CRM",
     image: "/images/personal-crm-1.png",
     images: [
       "/images/personal-crm-1.png",
@@ -93,6 +140,7 @@ export const projects: Project[] = [
       ]
     }
   },
+
   {
     title: "WatchWise",
     slug: "watchwise",
@@ -105,7 +153,7 @@ export const projects: Project[] = [
     ],
     tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Vercel"],
     liveUrl: "https://watch-wise-7t72.vercel.app",
-    repoUrl: "https://github.com/BusshiiQT/WatchWise", // updated
+    repoUrl: "https://github.com/BusshiiQT/WatchWise",
     image: "/images/watchwise-1.png",
     images: [
       "/images/watchwise-1.png",
