@@ -1,5 +1,5 @@
 import ProjectCard from "@/components/ProjectCard";
-import { projects } from "@/data/projects";
+import { legacyProjects as projects } from "@/data/projects";
 
 export default function ProjectsPage() {
   return (

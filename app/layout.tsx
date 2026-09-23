@@ -19,10 +19,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <Header />
-        <main className="site-content">{children}</main>
-        <footer className="footer">
-          <div className="content-width">
+        <main id="main-content" className="site-content" tabIndex={-1}>{children}</main>
+        <footer id="footer" className="footer">
+          <div className="content-width footer-content">
             <span>© {new Date().getFullYear()} Hector Virrey</span>
+            <a href="https://github.com/BusshiiQT">GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </footer>
       </body>

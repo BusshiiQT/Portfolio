@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useParams } from "next/navigation";
-import { projects } from "@/data/projects";
+import { legacyProjects as projects } from "@/data/projects";
 
 export default function ProjectPage() {
   // Read the dynamic route param safely in a client component

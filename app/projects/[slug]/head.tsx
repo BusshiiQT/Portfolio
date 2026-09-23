@@ -1,4 +1,4 @@
-import { projects } from '@/data/projects';
+import { legacyProjects as projects } from '@/data/projects';
 
 export default function Head({ params }: { params: { slug: string } }) {
   const p = projects.find(x => x.slug === params.slug);

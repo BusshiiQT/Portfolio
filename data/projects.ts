@@ -2,10 +2,11 @@ export type Project = {
   title: string;
   slug: string;
   summary: string;
+  tagline?: string;
   highlights: string[];
   tech: string[];
-  liveUrl: string;
-  repoUrl: string;
+  liveUrl?: string;
+  repoUrl?: string;
   image?: string;        // Thumbnail for cards
   images?: string[];     // Gallery images for project page
   comingSoon?: boolean;
@@ -17,7 +18,8 @@ export type Project = {
   };
 };
 
-export const projects: Project[] = [
+// Retained for existing /projects routes during the redesign.
+export const legacyProjects: Project[] = [
   {
     title: "NeighborLink",
     slug: "neighborlink",
@@ -207,4 +209,39 @@ export const projects: Project[] = [
     comingSoon: true,
     caseStudy: { overview: "MVP complete — polishing widgets and settings." }
   }
+];
+
+// Active homepage selection. Legacy case-study claims stay off the homepage.
+const petCare = legacyProjects.find((project) => project.slug === "petcare-hub")!;
+const neighborLink = legacyProjects.find((project) => project.slug === "neighborlink")!;
+
+export const projects: Project[] = [
+  {
+    title: petCare.title,
+    slug: petCare.slug,
+    summary: "A pet care booking platform connecting owners with service providers, with availability validation and conflict-safe booking workflows.",
+    highlights: petCare.highlights,
+    tech: petCare.tech,
+    liveUrl: petCare.liveUrl,
+    repoUrl: petCare.repoUrl,
+    image: petCare.image,
+  },
+  {
+    title: "GigMate",
+    slug: "gigmate",
+    tagline: "Know what you actually earned.",
+    summary: "A gig-work earnings tracker focused on turning income, mileage, expenses, and tax estimates into a clearer picture of real take-home pay.",
+    highlights: ["Earnings tracking", "Mileage deductions", "Estimated tax reserve", "Take-home calculations", "Dashboard charts"],
+    tech: ["Next.js", "TypeScript", "Supabase", "Recharts"],
+  },
+  {
+    title: neighborLink.title,
+    slug: neighborLink.slug,
+    summary: "A local marketplace for browsing listings and chatting with sellers, with optional AI tools for price estimates and message suggestions.",
+    highlights: neighborLink.highlights,
+    tech: neighborLink.tech,
+    liveUrl: neighborLink.liveUrl,
+    repoUrl: neighborLink.repoUrl,
+    image: neighborLink.image,
+  },
 ];
