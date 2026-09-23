@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Atmosphere from "@/components/Atmosphere";
 import type { ReactNode } from "react";
 import { projects, type Project } from "@/data/projects";
 
@@ -26,6 +27,7 @@ export default function Page() {
 
   return (
     <div className="homepage">
+      <Atmosphere />
       <section id="home" className="home-hero content-width" aria-labelledby="hero-title">
         <div className="hero-copy">
           <p className="eyebrow">HECTOR VIRREY</p>

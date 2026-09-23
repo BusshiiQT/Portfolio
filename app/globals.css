@@ -247,3 +247,51 @@ a.btn.primary:hover, button.primary:hover { background: var(--accent-2); border-
   .hero-actions { gap: 0.75rem 1.25rem; }
   .footer-content { flex-wrap: wrap; }
 }
+
+/* Checkpoint 3: decorative light stays clipped inside the viewport. */
+.homepage { isolation: isolate; }
+.atmosphere { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; --light-x: 12%; --light-y: 88%; }
+.atmosphere-position { position: absolute; inset: 0; transform: translate(var(--light-x), var(--light-y)); }
+.atmosphere-light { position: absolute; width: 150vmax; height: 115vmax; left: -75vmax; top: -57.5vmax; background: radial-gradient(ellipse at center, rgb(90 23 42 / 0.62) 0%, rgb(90 23 42 / 0.3) 24%, rgb(90 23 42 / 0.09) 45%, transparent 67%); animation: atmosphere-drift 22s ease-in-out infinite alternate; }
+.atmosphere-grain { position: absolute; inset: 0; background: url('/images/atmosphere-grain.svg') center / cover; opacity: 0.025; }
+@keyframes atmosphere-drift {
+  from { transform: translate(-2%, 1%) rotate(-7deg) scale(0.96); opacity: 0.72; }
+  to { transform: translate(2%, -2%) rotate(7deg) scale(1.05); opacity: 0.96; }
+}
+.atmosphere[data-paused] .atmosphere-light { animation-play-state: paused; }
+.site-header { position: relative; z-index: 10; }
+.site-nav a { transition: color 200ms ease; }
+.site-nav a[aria-current='location'] { color: var(--accent); text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 0.5rem; }
+/* The same nav changes position: no duplicate links or keyboard destinations. */
+.site-header[data-floating] .site-nav { position: fixed; top: 1rem; left: 50%; width: max-content; max-width: calc(100% - 2rem); flex-wrap: nowrap; transform: translateX(-50%); gap: clamp(0.25rem, 2vw, 1.5rem); padding: 0.35rem 0.8rem; border: 1px solid rgb(245 242 238 / 0.13); border-radius: 999px; background: rgb(16 23 32 / 0.88); backdrop-filter: blur(16px); animation: nav-arrive 350ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+@keyframes nav-arrive {
+  from { opacity: 0; transform: translate(-50%, -14px) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+.site-header:not([data-floating]) .site-nav { animation: nav-return 300ms ease both; }
+@keyframes nav-return { from { opacity: 0.6; } to { opacity: 1; } }
+.editorial-button, .text-link { transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease, translate 220ms ease; }
+.editorial-button span, .text-link span { transition: transform 220ms ease; }
+.featured-image, .product-image, .product-placeholder { transition: border-color 350ms ease, background-color 350ms ease, translate 450ms cubic-bezier(0.22, 1, 0.36, 1); }
+.featured-image img, .product-image img, .placeholder-mark { transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1); }
+@media (hover: hover) and (pointer: fine) {
+  .featured-image:hover, .product-story:hover .product-image, .product-story:hover .product-placeholder { border-color: #566172; translate: 0 -3px; }
+  .featured-image:hover img, .product-story:hover .product-image img { transform: scale(1.012); }
+  .product-story:hover .product-placeholder { background: var(--card); }
+  .product-story:hover .placeholder-mark { transform: translateY(-3px); }
+  .editorial-button:hover { translate: 0 -2px; }
+  .editorial-button:hover span, .text-link:hover span { transform: translate(2px, -2px); }
+}
+@media (max-width: 700px) {
+  .atmosphere-light { width: 120vmax; height: 100vmax; left: -60vmax; top: -50vmax; animation-name: atmosphere-breathe; }
+  .site-header[data-floating] .site-nav { top: 0.5rem; padding: 0.25rem 0.5rem; gap: 0.25rem; }
+}
+@keyframes atmosphere-breathe { from { opacity: 0.65; } to { opacity: 0.85; } }
+/* Reserve the original nav row even while its links are fixed. */
+@media (max-width: 420px) { .site-header[data-floating] { padding-bottom: 3.75rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .atmosphere-position { transform: translate(12%, 88%); }
+  .atmosphere-light { animation: none; opacity: 0.75; }
+  .featured-image, .product-image, .product-placeholder, .editorial-button { translate: none !important; }
+  .placeholder-mark, .editorial-button span, .text-link span { transform: none !important; }
+}
