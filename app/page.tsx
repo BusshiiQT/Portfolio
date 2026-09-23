@@ -44,6 +44,7 @@ export default function Page() {
       </section>
 
       <section id="projects" className="home-section featured-product content-width" aria-labelledby="petcare-title">
+        <span id="work" className="work-anchor" aria-hidden="true" />
         <p className="eyebrow">01 / FEATURED PRODUCT</p>
         <div className="featured-heading">
           <h2 id="petcare-title">{petCare.title}</h2>

@@ -10,7 +10,7 @@ const stops = [
   { id: "contact", x: 12, y: 88 },
 ];
 
-export default function Atmosphere() {
+export default function Atmosphere({ mode = "home" }: { mode?: "home" | "about" }) {
   const root = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Atmosphere() {
     if (!layer) return;
     const header = document.querySelector<HTMLElement>(".site-header");
     const nav = header?.querySelector("nav");
-    const sections = stops.map((stop) => document.getElementById(stop.id)!);
+    const sections = mode === "about" ? [] : stops.map((stop) => document.getElementById(stop.id)!);
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
     let anchors: number[] = [];
@@ -34,14 +34,15 @@ export default function Atmosphere() {
       let active = "";
       sectionTops.forEach((top, index) => {
         if (top <= focusLine) {
-          active = index === 0 ? "" : index < 3 ? "projects" : stops[index].id;
+          active = index === 0 ? "" : index < 3 ? "work" : stops[index].id;
         }
       });
       nav?.querySelectorAll("a").forEach((link) => {
-        if (active && link.hash === `#${active}`) link.setAttribute("aria-current", "location");
+        if (mode === "about" && link.pathname === "/about") link.setAttribute("aria-current", "page");
+        else if (mode === "home" && active && link.hash === `#${active}`) link.setAttribute("aria-current", "location");
         else link.removeAttribute("aria-current");
       });
-      if (preference.matches) return;
+      if (preference.matches || mode === "about") return;
       let index = 0;
       while (index < anchors.length - 2 && scroll > anchors[index + 1]) index++;
       const progress = Math.max(0, Math.min(1,
@@ -75,7 +76,7 @@ export default function Atmosphere() {
           observer?.unobserve(element);
           if (element.dataset.revealed) return;
           element.dataset.revealed = "true";
-          const heroIndex = Array.from(document.querySelectorAll(".hero-copy > *, .hero-visual")).indexOf(element);
+          const heroIndex = Array.from(document.querySelectorAll(mode === "about" ? ".about-intro-copy > *, .about-portrait" : ".hero-copy > *, .hero-visual")).indexOf(element);
           // No hidden CSS state: failed/disabled JavaScript leaves server content visible.
           const animation = element.animate([
             { opacity: 0, transform: "translateY(24px)" },
@@ -86,7 +87,7 @@ export default function Atmosphere() {
           animation.onfinish = () => animations.delete(animation);
         });
       }, { threshold: 0.08 });
-      document.querySelectorAll(".hero-copy > *, .hero-visual, .home-section > .eyebrow, .featured-heading, .featured-image, #products > h2, .product-story, .about-teaser > div, #contact > h2, .contact-bottom")
+      document.querySelectorAll(mode === "about" ? ".about-page [data-reveal]" : ".hero-copy > *, .hero-visual, .home-section > .eyebrow, .featured-heading, .featured-image, #products > h2, .product-story, .about-teaser > div, #contact > h2, .contact-bottom")
         .forEach((element) => observer?.observe(element));
     };
     const onPreference = () => {
@@ -129,9 +130,9 @@ export default function Atmosphere() {
       header?.removeAttribute("data-floating");
       nav?.querySelectorAll("a").forEach((link) => link.removeAttribute("aria-current"));
     };
-  }, []);
+  }, [mode]);
 
-  return <div ref={root} className="atmosphere" aria-hidden="true">
+  return <div ref={root} className={`atmosphere${mode === "about" ? " atmosphere-about" : ""}`} aria-hidden="true">
     <div className="atmosphere-position"><div className="atmosphere-light" /></div>
     <div className="atmosphere-grain" />
   </div>;
