@@ -4,7 +4,7 @@ import Magnetic from "@/components/Magnetic";
 
 export default function Page() {
   return (
-    <main>
+    <div>
       {/* HERO */}
       <section className="beam-container hero" style={{ marginBottom: "3rem" }}>
         <h1 className="glow-title" style={{ marginBottom: "1rem" }}>
@@ -59,6 +59,6 @@ export default function Page() {
           Currently focused on Next.js, React, WebGL, and motion.
         </p>
       </section>
-    </main>
+    </div>
   );
 }

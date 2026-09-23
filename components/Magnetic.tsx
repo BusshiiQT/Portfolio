@@ -43,7 +43,7 @@ export default function Magnetic({
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      className={className}
+      className={["magnetic", className].filter(Boolean).join(" ")}
       style={style}
     >
       {children}

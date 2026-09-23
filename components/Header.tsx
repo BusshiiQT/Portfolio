@@ -21,7 +21,7 @@ export default function Header() {
     const el = document.getElementById(id);
     if (!el) return;
     // Offset for sticky header: use scroll-margin-top in CSS, but fallback here too
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.scrollIntoView({ behavior: "auto", block: "start" });
   };
 
   // Observe sections to keep active state while scrolling
