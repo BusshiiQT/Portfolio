@@ -8,6 +8,7 @@ export type Project = {
   liveUrl?: string;
   repoUrl?: string;
   image?: string;        // Thumbnail for cards
+  imageAlt?: string;
   images?: string[];     // Gallery images for project page
   comingSoon?: boolean;
   caseStudy?: {
@@ -73,7 +74,7 @@ export const legacyProjects: Project[] = [
       "PostgreSQL",
       "Vercel"
     ],
-    liveUrl: "https://petcare-hub.vercel.app",
+    liveUrl: "https://petcare-hub-gilt.vercel.app",
     repoUrl: "https://github.com/BusshiiQT/petcare-hub",
     image: "/images/petcare-hub1.png",
     images: [
@@ -224,15 +225,20 @@ export const projects: Project[] = [
     tech: petCare.tech,
     liveUrl: petCare.liveUrl,
     repoUrl: petCare.repoUrl,
-    image: petCare.image,
+    image: "/images/petcare-hub-featured.png",
+    imageAlt: "PetCare Hub homepage with pet service booking options and provider previews",
   },
   {
     title: "GigMate",
     slug: "gigmate",
+    liveUrl: "https://gigmate-six.vercel.app",
+    repoUrl: "https://github.com/BusshiiQT/Gigmate.git",
     tagline: "Know what you actually earned.",
     summary: "A gig-work earnings tracker focused on turning income, mileage, expenses, and tax estimates into a clearer picture of real take-home pay.",
     highlights: ["Earnings tracking", "Mileage deductions", "Estimated tax reserve", "Take-home calculations", "Dashboard charts"],
     tech: ["Next.js", "TypeScript", "Supabase", "Recharts"],
+    image: "/images/gigmate-dashboard.png",
+    imageAlt: "GigMate dashboard showing estimated take-home pay, earnings, tax reserve, and profit trend",
   },
   {
     title: neighborLink.title,
@@ -242,6 +248,7 @@ export const projects: Project[] = [
     tech: neighborLink.tech,
     liveUrl: neighborLink.liveUrl,
     repoUrl: neighborLink.repoUrl,
-    image: neighborLink.image,
+    image: "/images/neighborlink-featured.png",
+    imageAlt: "NeighborLink project preview with marketplace search filters and local listings",
   },
 ];

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Atmosphere from "@/components/Atmosphere";
 
 const description = "Learn about Hector Virrey, a full-stack developer building thoughtful web products and currently pursuing a B.S. in Computer Science at Western Governors University.";
@@ -43,12 +44,8 @@ export default function AboutPage() {
           <p className="hero-description" data-reveal>I&apos;m a full-stack developer who enjoys taking an idea from the first interface through the backend logic, database, and deployment.</p>
           <p data-reveal>Currently pursuing a B.S. in Computer Science at Western Governors University.</p>
         </div>
-        {/* Temporary portrait: replace the inner placeholder with a fill Image and descriptive alt text. Keep this frame. */}
         <div className="about-portrait" data-reveal>
-          <div className="about-portrait-placeholder" role="img" aria-label="Portrait placeholder for Hector Virrey">
-            <span className="about-monogram" aria-hidden="true">HV<span>.</span></span>
-            <span className="about-portrait-caption" aria-hidden="true">HECTOR VIRREY<span>PORTRAIT TO COME</span></span>
-          </div>
+          <Image src="/images/hector-portrait.png" alt="Hector Virrey, full-stack developer" fill sizes="(max-width: 700px) min(92vw, 448px), (max-width: 1300px) 42vw, 500px" priority />
         </div>
       </section>
 

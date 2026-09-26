@@ -1,15 +1,10 @@
 import Image from "next/image";
 import Atmosphere from "@/components/Atmosphere";
-import type { ReactNode } from "react";
+import HeroPhotoStack from "@/components/HeroPhotoStack";
 import { projects, type Project } from "@/data/projects";
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
-}
-
-// The frame accepts any visual, including the future portrait.
-function HeroVisual({ children }: { children: ReactNode }) {
-  return <div className="hero-visual">{children}</div>;
 }
 
 function ProjectLinks({ project }: { project: Project }) {
@@ -30,17 +25,16 @@ export default function Page() {
       <Atmosphere />
       <section id="home" className="home-hero content-width" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">HECTOR VIRREY</p>
+          <p className="eyebrow">HECTOR VIRREY / FULL-STACK DEVELOPER</p>
           <h1 id="hero-title"><span>I build software</span><span>that turns ideas</span><span>into products.</span></h1>
           <p className="hero-description">Full-stack developer building thoughtful, useful products across the frontend, backend, and everything in between.</p>
+          <p className="hero-education">Currently pursuing a B.S. in Computer Science at Western Governors University.</p>
           <div className="hero-actions">
             <a className="editorial-button" href="#projects">VIEW MY WORK <Arrow /></a>
             <a className="text-link" href="/resume.pdf">RESUME <Arrow /></a>
           </div>
         </div>
-        <HeroVisual>
-          <Image src="/images/petcare-hub1.png" alt="PetCare Hub homepage with pet services and a booking snapshot" fill sizes="(max-width: 900px) 92vw, 42vw" className="hero-preview" priority />
-        </HeroVisual>
+        <HeroPhotoStack />
       </section>
 
       <section id="projects" className="home-section featured-product content-width" aria-labelledby="petcare-title">
@@ -55,7 +49,7 @@ export default function Page() {
           </div>
         </div>
         <div className="featured-image">
-          <Image src="/images/petcare-hub1.png" alt="PetCare Hub landing page showing pet service booking options and upcoming care" fill sizes="(max-width: 1300px) 92vw, 1200px" />
+          <Image src={petCare.image!} alt={petCare.imageAlt!} fill sizes="(max-width: 1300px) 92vw, 1200px" />
         </div>
       </section>
 
@@ -65,17 +59,9 @@ export default function Page() {
         <div className="product-composition">
           {moreProjects.map((project) => (
             <article key={project.slug} className={`product-story product-story-${project.slug}`} aria-labelledby={`${project.slug}-title`}>
-              {project.image ? (
-                <div className="product-image">
-                  <Image src={project.image} alt="NeighborLink marketplace with listing search filters and local listing cards" fill sizes="(max-width: 700px) 92vw, 44vw" />
-                </div>
-              ) : (
-                <div className="product-placeholder">
-                  <span className="placeholder-mark" aria-hidden="true">G</span>
-                  <span className="placeholder-name">GIGMATE</span>
-                  <span className="eyebrow">PRODUCT PREVIEW</span>
-                </div>
-              )}
+              <div className="product-image">
+                <Image src={project.image!} alt={project.imageAlt ?? `${project.title} preview`} fill sizes="(max-width: 700px) 92vw, 44vw" />
+              </div>
               <div className="product-copy">
                 <h3 id={`${project.slug}-title`}>{project.title}</h3>
                 {project.tagline && <p className="product-tagline">{project.tagline}</p>}
