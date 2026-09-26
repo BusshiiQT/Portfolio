@@ -1,7 +1,14 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+import { sharedOpenGraph, siteTitle, siteDescription } from "../lib/seo";
 import Atmosphere from "@/components/Atmosphere";
 import HeroPhotoStack from "@/components/HeroPhotoStack";
 import { projects, type Project } from "@/data/projects";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { ...sharedOpenGraph, title: siteTitle, description: siteDescription, url: "/" },
+};
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;

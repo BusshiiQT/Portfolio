@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Atmosphere from "@/components/Atmosphere";
+import { sharedOpenGraph, sharedTwitter } from "../../lib/seo";
 
 const description = "Learn about Hector Virrey, a full-stack developer building thoughtful web products and currently pursuing a B.S. in Computer Science at Western Governors University.";
 
 export const metadata: Metadata = {
   title: "About",
   description,
-  openGraph: { title: "About | Hector Virrey", description },
-  twitter: { title: "About | Hector Virrey", description },
+  alternates: { canonical: "/about" },
+  openGraph: { ...sharedOpenGraph, title: "About | Hector Virrey", description, url: "/about" },
+  twitter: { ...sharedTwitter, title: "About | Hector Virrey", description },
 };
 
 const approach = [
@@ -55,6 +57,7 @@ export default function AboutPage() {
           <h2 id="story-title">Building things taught me how much I wanted to understand what was underneath them.</h2>
         </div>
         <div className="about-prose" data-reveal>
+          <p>I&apos;m Hector Virrey, a full-stack developer and software engineer in the Chicago, Illinois area.</p>
           <p>Building PetCare Hub, GigMate, and NeighborLink has taken me across the full stack: from interfaces and application logic to authentication, databases, APIs, and deployment.</p>
           <p>Working through those connections, and debugging when they don&apos;t behave as expected, is what keeps me interested. I want to understand how each part supports the experience someone actually uses.</p>
           <p>Building these products has also pushed me to strengthen my programming fundamentals and deepen my understanding of the systems behind the code. I&apos;m constantly working to become more independent as an engineer—not just knowing what works, but understanding why it works.</p>
