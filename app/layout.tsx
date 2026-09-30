@@ -25,7 +25,7 @@ const structuredData = {
       sameAs: ["https://github.com/BusshiiQT"],
       image: `${siteUrl}/images/hector-portrait.png`,
       homeLocation: { "@type": "Place", name: "Chicago, Illinois area" },
-      description: "Full-stack developer and software engineer. Currently pursuing a B.S. in Computer Science at Western Governors University; degree in progress.",
+      description,
     },
     {
       "@type": "WebSite",

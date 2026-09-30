@@ -35,7 +35,6 @@ export default function Page() {
           <p className="eyebrow">HECTOR VIRREY / FULL-STACK DEVELOPER</p>
           <h1 id="hero-title"><span>I build software</span><span>that turns ideas</span><span>into products.</span></h1>
           <p className="hero-description">Full-stack developer building thoughtful, useful products across the frontend, backend, and everything in between.</p>
-          <p className="hero-education">Currently pursuing a B.S. in Computer Science at Western Governors University.</p>
           <div className="hero-actions">
             <a className="editorial-button" href="#projects">VIEW MY WORK <Arrow /></a>
             <a className="text-link" href="/resume.pdf">RESUME <Arrow /></a>
@@ -94,7 +93,7 @@ export default function Page() {
         <p className="eyebrow">04 / CONTACT</p>
         <h2 id="contact-title">Have an opportunity<br />or idea in mind?</h2>
         <div className="contact-bottom">
-          <p>I&apos;m open to junior and full-stack software development opportunities, collaborations, and conversations about useful products.</p>
+          <p>I’m open to full-stack software development opportunities across a wide range of projects, as well as collaborations and conversations about useful products.</p>
           <a className="editorial-button" href="mailto:hv.fin25@gmail.com">LET&apos;S TALK <Arrow /></a>
         </div>
       </section>

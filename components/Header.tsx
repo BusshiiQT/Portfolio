@@ -6,7 +6,7 @@ export default function Header() {
       <a className="skip-link" href="#main-content">Skip to content</a>
       <Link href="/" className="site-brand" aria-label="Hector Virrey home">HV<span aria-hidden="true">.</span></Link>
       <nav aria-label="Primary" className="site-nav">
-        <a href="/#work">Work</a>
+        <a href="/#work">Home</a>
         <Link href="/about">About</Link>
         <a href="/resume.pdf">Resume</a>
         <a href="/#contact">Let&apos;s Talk <span aria-hidden="true">↗</span></a>

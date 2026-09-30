@@ -215,6 +215,10 @@ a.btn.primary:hover, button.primary:hover { background: var(--accent-2); border-
   .hero-photo-stack .hero-photo[data-front="false"] { transform: translate(28%, 7%) rotate(0deg) scale(0.9) !important; }
 }
 .home-section { padding-block: var(--section-space); border-top: 1px solid var(--border-soft); }
+/* Modestly tighten only the restored Home and About section boundaries. */
+.homepage > .home-section,
+.about-page > .home-section { padding-block: clamp(2.5rem, 7vw, 6rem); }
+.about-page > .about-intro { padding-bottom: clamp(2.5rem, 7vw, 6rem); }
 .homepage h2 { font-weight: 550; letter-spacing: -0.045em; }
 .featured-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 4rem; align-items: start; margin-bottom: 3rem; }
 .featured-heading h2 { font-size: clamp(3rem, 6vw, 5.5rem); }

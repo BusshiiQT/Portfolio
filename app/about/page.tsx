@@ -3,7 +3,7 @@ import Image from "next/image";
 import Atmosphere from "@/components/Atmosphere";
 import { sharedOpenGraph, sharedTwitter } from "../../lib/seo";
 
-const description = "Learn about Hector Virrey, a full-stack developer building thoughtful web products and currently pursuing a B.S. in Computer Science at Western Governors University.";
+const description = "Meet Hector Virrey, a full-stack developer building web products with interfaces, authentication, booking workflows, databases, and APIs.";
 
 export const metadata: Metadata = {
   title: "About",
@@ -44,7 +44,6 @@ export default function AboutPage() {
           <p className="eyebrow" data-reveal>ABOUT / HECTOR VIRREY</p>
           <h1 id="about-intro-title" data-reveal>I build software from problem to product.</h1>
           <p className="hero-description" data-reveal>I&apos;m a full-stack developer who enjoys taking an idea from the first interface through the backend logic, database, and deployment.</p>
-          <p data-reveal>Currently pursuing a B.S. in Computer Science at Western Governors University.</p>
         </div>
         <div className="about-portrait" data-reveal>
           <Image src="/images/hector-portrait.png" alt="Hector Virrey, full-stack developer" fill sizes="(max-width: 700px) min(92vw, 448px), (max-width: 1300px) 42vw, 500px" priority />
@@ -116,7 +115,7 @@ export default function AboutPage() {
       <section className="home-section about-closing content-width" aria-labelledby="opportunity-title">
         <p className="eyebrow" data-reveal>05 / WHAT&apos;S NEXT</p>
         <h2 id="opportunity-title" data-reveal>I&apos;m looking for the next<br />problem worth solving.</h2>
-        <p data-reveal>I&apos;m currently open to junior and full-stack software development opportunities where I can contribute, learn quickly, and keep building useful products.</p>
+        <p data-reveal>I’m currently open to full-stack software development opportunities across a wide range of projects, where I can contribute my skills, learn quickly, collaborate with a team, and continue building meaningful, high-quality products.</p>
         <div className="hero-actions" data-reveal>
           <a className="editorial-button" href="/#work">VIEW MY WORK <Arrow /></a>
           <a className="text-link" href="mailto:hv.fin25@gmail.com">GET IN TOUCH <Arrow /></a>
