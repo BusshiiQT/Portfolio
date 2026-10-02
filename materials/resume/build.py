@@ -78,13 +78,17 @@ def main():
     paragraph(f'<font color="#374151"><b>{escape(data["headline"])}</b></font>', size=10.5, leading=15, align=1)
     contacts = [escape(data["location"]), escape(data["phone"])] + [link(item) for item in data["contact_links"]]
     paragraph("  |  ".join(contacts), leading=13.15, align=1)
+    heading("OBJECTIVE")
+    paragraph(escape(data["objective"]))
     heading("SUMMARY")
     paragraph(escape(data["summary"]))
     heading("TECHNICAL SKILLS")
     for skill in data["skills"]:
         paragraph(f'<b>{escape(skill["label"])}:</b> {escape(skill["text"])}', leading=11.7)
-    heading("PROJECTS")
-    for project in data["projects"]:
+    heading("EXPERIENCE")
+    development = data["development_experience"]
+    paragraph(f'<b>{escape(development["title"])}</b>  |  <i>{escape(development["context"])}</i>', leading=11.9, gap=2)
+    for project in development["projects"]:
         title = f'<b><font size="9">{escape(project["name"])}</font><font size="8.5"> — {escape(project["description"])}</font></b>'
         title += f'  |  <i>{escape(project["stack"])}</i>'
         if project["links"]:
@@ -92,7 +96,7 @@ def main():
         paragraph(title, leading=12.2)
         bullets(project["bullets"])
         top += 1.3
-    heading("EXPERIENCE")
+    top += 2
     for job in data["experience"]:
         paragraph(f'<b>{escape(job["employer"])} — {escape(job["title"])}</b>  |  <i>{escape(job["dates"])}</i>', leading=11.9)
         bullets(job["bullets"])

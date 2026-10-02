@@ -7,8 +7,13 @@ No tailored application was used or overwritten.
 
 The source preserves the original contact details, six hyperlink destinations,
 skills, project bullets, employment title/dates, and WGU degree marked in progress.
-The summary now leads with demonstrated full-stack development and project work;
-education remains in its own section. The original PDF's broken Unicode mappings
+It adds the LinkedIn profile URL supplied by Hector without tracking parameters.
+The Objective describes the desired development opportunity; the brief Summary
+highlights demonstrated project work and transferable troubleshooting experience.
+Projects appear within Experience under Independent Full-Stack Developer / Self-directed
+projects, without invented dates or claims of paid employment. Education remains
+in its own section.
+The original PDF's broken Unicode mappings
 for bullets and dashes were reconstructed from its rendered appearance.
 
 ## Build and review

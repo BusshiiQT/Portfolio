@@ -6,53 +6,59 @@
   "contact_links": [
     { "label": "hv.fin25@gmail.com", "url": "mailto:hv.fin25@gmail.com" },
     { "label": "GitHub", "url": "https://github.com/BusshiiQT" },
-    { "label": "HectorVirrey.com", "url": "https://hectorvirrey.com/" }
+    { "label": "HectorVirrey.com", "url": "https://hectorvirrey.com/" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/hector-virrey-116b44213/" }
   ],
-  "summary": "Full-stack developer building and deploying web applications with Next.js, React, TypeScript, PostgreSQL, and Supabase. Built PetCare Hub, GigMate, and NeighborLink, with authentication, database-backed workflows, APIs, responsive interfaces, and end-to-end deployment. Project work includes server-validated bookings, tested earnings calculations, and direct messaging. Continuing to strengthen software engineering fundamentals through hands-on development.",
+  "objective": "To contribute my React, Next.js, TypeScript, and database skills to a development team building reliable, user-friendly applications that solve customer problems.",
+  "summary": "Hands-on full-stack project experience includes server-validated bookings, tested earnings calculations, and direct messaging. Brings systematic troubleshooting and independent problem-solving experience from trailer and refrigeration repair.",
   "skills": [
     { "label": "Languages", "text": "JavaScript, TypeScript, HTML, CSS, SQL" },
     { "label": "Frontend", "text": "React, Next.js, Tailwind CSS, Responsive UI" },
     { "label": "Backend & Data", "text": "Node.js, PostgreSQL, Supabase, REST APIs, Authentication, Row Level Security" },
     { "label": "Tools", "text": "Git, GitHub, Vercel, VS Code" }
   ],
-  "projects": [
-    {
-      "name": "PetCare Hub",
-      "description": "Full-Stack Pet Services Marketplace",
-      "stack": "Next.js • React • TypeScript • Supabase • PostgreSQL",
-      "links": [
-        { "label": "Live", "url": "https://petcare-hub-gilt.vercel.app/" },
-        { "label": "GitHub", "url": "https://github.com/BusshiiQT/petcare-hub" }
-      ],
-      "bullets": [
-        "Built and deployed a two-sided marketplace connecting pet owners with service providers, including authentication, pet management, provider profiles, availability, bookings, and reviews.",
-        "Implemented server-validated booking workflows and database authorization using Supabase Auth and PostgreSQL Row Level Security.",
-        "Designed relational data models and protected owner/provider workflows while maintaining a responsive production UI."
-      ]
-    },
-    {
-      "name": "GigMate",
-      "description": "Gig Work Earnings & Profitability Tracker",
-      "stack": "Next.js • TypeScript • Supabase • PostgreSQL",
-      "links": [{ "label": "Live", "url": "https://gigmate-six.vercel.app/" }],
-      "bullets": [
-        "Built a full-stack dashboard for tracking gig sessions, mileage, expenses, estimated taxes, cash profit, take-home pay, and effective hourly rate.",
-        "Developed a centralized financial calculation engine with automated tests covering core earnings and expense calculations.",
-        "Implemented authentication, persistent user settings, database security policies, analytics, filtering, and data visualization."
-      ]
-    },
-    {
-      "name": "NeighborLink",
-      "description": "Local Marketplace Platform",
-      "stack": "Next.js • TypeScript • Supabase • PostgreSQL",
-      "links": [],
-      "bullets": [
-        "Built a local marketplace with listings, image uploads, search and filtering, favorites, user authentication, and direct messaging.",
-        "Implemented database-backed messaging with unread states and user-scoped marketplace data.",
-        "Developed responsive listing creation, browsing, detail, and account workflows backed by Supabase."
-      ]
-    }
-  ],
+  "development_experience": {
+    "title": "Independent Full-Stack Developer",
+    "context": "Self-directed projects",
+    "projects": [
+      {
+        "name": "PetCare Hub",
+        "description": "Full-Stack Pet Services Marketplace",
+        "stack": "Next.js • React • TypeScript • Supabase • PostgreSQL",
+        "links": [
+          { "label": "Live", "url": "https://petcare-hub-gilt.vercel.app/" },
+          { "label": "GitHub", "url": "https://github.com/BusshiiQT/petcare-hub" }
+        ],
+        "bullets": [
+          "Built and deployed a two-sided marketplace connecting pet owners with service providers, including authentication, pet management, provider profiles, availability, bookings, and reviews.",
+          "Implemented server-validated booking workflows and database authorization using Supabase Auth and PostgreSQL Row Level Security.",
+          "Designed relational data models and protected owner/provider workflows while maintaining a responsive production UI."
+        ]
+      },
+      {
+        "name": "GigMate",
+        "description": "Gig Work Earnings & Profitability Tracker",
+        "stack": "Next.js • TypeScript • Supabase • PostgreSQL",
+        "links": [{ "label": "Live", "url": "https://gigmate-six.vercel.app/" }],
+        "bullets": [
+          "Built a full-stack dashboard for tracking gig sessions, mileage, expenses, estimated taxes, cash profit, take-home pay, and effective hourly rate.",
+          "Developed a centralized financial calculation engine with automated tests covering core earnings and expense calculations.",
+          "Implemented authentication, persistent user settings, database security policies, analytics, filtering, and data visualization."
+        ]
+      },
+      {
+        "name": "NeighborLink",
+        "description": "Local Marketplace Platform",
+        "stack": "Next.js • TypeScript • Supabase • PostgreSQL",
+        "links": [],
+        "bullets": [
+          "Built a local marketplace with listings, image uploads, search and filtering, favorites, user authentication, and direct messaging.",
+          "Implemented database-backed messaging with unread states and user-scoped marketplace data.",
+          "Developed responsive listing creation, browsing, detail, and account workflows backed by Supabase."
+        ]
+      }
+    ]
+  },
   "experience": [
     {
       "employer": "CTR Services Inc.",
@@ -60,7 +66,7 @@
       "dates": "July 2024 — Present",
       "bullets": [
         "Diagnose and repair electrical, mechanical, refrigeration, braking, and trailer systems in a production service environment.",
-        "Troubleshoot faults systematically using diagnostic information, schematics, testing equipment, and hands-on inspection.",
+        "Use diagnostic information, schematics, testing equipment, and hands-on inspection to identify fault causes and resolve repairs accurately, applying systematic problem-solving relevant to development work.",
         "Manage repairs independently while documenting work, communicating findings, and prioritizing safe, reliable equipment operation."
       ]
     }
