@@ -9,8 +9,8 @@
     { "label": "HectorVirrey.com", "url": "https://hectorvirrey.com/" },
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/hector-virrey-116b44213/" }
   ],
-  "objective": "To contribute my React, Next.js, TypeScript, and database skills to a development team building reliable, user-friendly applications that solve customer problems.",
-  "summary": "Hands-on full-stack project experience includes server-validated bookings, tested earnings calculations, and direct messaging. Brings systematic troubleshooting and independent problem-solving experience from trailer and refrigeration repair.",
+  "objective": "Full-Stack Developer focused on solving customer problems through reliable, easy-to-use web applications. I bring hands-on experience with React, Next.js, TypeScript, Supabase, PostgreSQL, and REST APIs, along with practical troubleshooting skills and attention to detail. I’m looking to help a team improve customer experiences, streamline everyday tasks, and build products that support business growth.",
+  "summary": "Self-directed full-stack projects include server-validated bookings, tested earnings calculations, and direct messaging. Trailer and refrigeration repair experience includes systematic diagnostics and independent problem-solving.",
   "skills": [
     { "label": "Languages", "text": "JavaScript, TypeScript, HTML, CSS, SQL" },
     { "label": "Frontend", "text": "React, Next.js, Tailwind CSS, Responsive UI" },
